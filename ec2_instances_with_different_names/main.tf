@@ -2,7 +2,7 @@ locals {
   instance_names=toset(["instance1","instance2","instance3"]) #instance names declared through a local variable.
 }
 resource "aws_instance" "ec2_instances"{
-     for_each=local.instance_names  #Passing the for_each argument to a cloud resource tells Terraform to create a different resource for each item in a map or list and a list cannot be directly fed to for_each meta-argument. Hence we have to convert it to set.
+     for_each=local.instance_names  #Passing the for_each argument to a cloud resource tells Terraform to create a different resource for each item in a map or list and a list cannot be directly fed to for_each meta-argument. Hence we have to convert it to set(refere line 2).
      instance_type="t2.micro"   #here i am creating 3 instances with different names and they belong to t2.micro instance family
      tags = {
        Name=each.key    #takes the instance names from local variable declared earlier
