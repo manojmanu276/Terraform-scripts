@@ -8,3 +8,8 @@ variable "acl_value" {
   description = "the options can be "private", "public-read","public-read-write","authenticated-read" etc."
   type = "string"
 }
+variable "bucket_name" {
+  default = "my-test-bucket-tf-1"
+  description = "name of the s3 bucket i want to provision"
+  type = "string"
+}
