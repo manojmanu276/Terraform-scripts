@@ -4,7 +4,7 @@ resource "aws_s3_bucket" "test-bucket-tf" {
     Name = "my-test-bucket-tf-1"
     Environment = "Dev"
    }
-   acl = "private"        #Access Control List options available are "public","private","public-read","public-read-write","authenticated-read", etc.
+   acl = var.acl_value        #Access Control List options available are "public","private","public-read","public-read-write","authenticated-read", etc.
    versioning {
      enabled =  true     # keeping multiple variants of the same object is called versioning
    }
