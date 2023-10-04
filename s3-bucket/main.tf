@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "test-bucket-tf" {
-   bucket = "my-test-bucket-tf-1"           #replace with your desired bucket-name
+   bucket = var.bucket_name           #replace with your desired bucket-name
    tags = {
-    Name = "my-test-bucket-tf-1"
+    Name = var.bucket_name
     Environment = "Dev"
    }
    acl = var.acl_value        #Access Control List options available are "public","private","public-read","public-read-write","authenticated-read", etc.
